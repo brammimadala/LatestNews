@@ -19,9 +19,9 @@ class NewsAdapter(private val list: List<Article>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val newsItem = list[position]
-        holder.author.text = newsItem.author
         holder.title.text = newsItem.title
-
+        holder.description.text = newsItem.description
+        holder.publishAt.text = newsItem.publishedAt
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +30,9 @@ class NewsAdapter(private val list: List<Article>) :
 
 
     class MyViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
-        val author: AppCompatTextView = itemView.findViewById(R.id.author)
         val title: AppCompatTextView = itemView.findViewById(R.id.title)
+        val description: AppCompatTextView = itemView.findViewById(R.id.description)
+        val publishAt: AppCompatTextView = itemView.findViewById(R.id.publishAt)
+
     }
 }

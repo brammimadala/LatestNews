@@ -42,8 +42,7 @@ class NewsFragment : Fragment() {
     }
 
     private fun newsList() {
-        viewModel.getNewsHeadLines("in", 1)
-
+        viewModel.getNewsHeadLines("us", 1)
         viewModel.newsHeadLines.observe(viewLifecycleOwner, Observer { response ->
             when (response) {
                 is Resource.Loading -> {
@@ -61,7 +60,6 @@ class NewsFragment : Fragment() {
                     }
                 }
             }
-
         })
     }
 
